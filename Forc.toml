@@ -1,6 +1,6 @@
 [project]
-authors = ["Hoang Anh Tuan"]
-entry = "./ERC20/main.sw"
+authors = ["tasibii"]
+entry = "./ERC721/src/main.sw"
 license = "Apache-2.0"
 name = "sway-contracts"
 
