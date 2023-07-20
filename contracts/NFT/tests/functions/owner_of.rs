@@ -2,7 +2,7 @@ use crate::utils::{
     abi_calls::{owner_of, mint},
     test_helpers::setup,
 };
-use fuels::{signers::Signer, types::{Identity, SizedAsciiString}};
+use fuels::{signers::Signer, types::Identity};
 
 mod success {
 

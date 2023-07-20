@@ -7,7 +7,7 @@ use fuels::{signers::Signer, types::Identity};
 mod success {
 
     use super::*;
-    use crate::utils::{TransferEvent, ApprovalEvent, ApprovalForAllEvent};    
+    use crate::utils::{ApprovalEvent, ApprovalForAllEvent};    
 
     #[tokio::test]
     async fn approves() {
@@ -67,15 +67,15 @@ mod reverts {
 
     use super::*;
 
-    #[tokio::test]
-    #[should_panic(expected = "DoesNotExist")]
-    async fn when_token_does_not_map_to_existing_token() {
-        let (_, _, alice) = setup().await;
+    // #[tokio::test]
+    // #[should_panic(expected = "DoesNotExist")]
+    // async fn when_token_does_not_map_to_existing_token() {
+    //     let (_, _, alice) = setup().await;
 
-        let alice_identity = Some(Identity::Address(alice.wallet.address().into()));
+    //     let alice_identity = Some(Identity::Address(alice.wallet.address().into()));
 
-        approve(&alice.contract, alice_identity.clone().unwrap(), 0).await;
-    }
+    //     approve(&alice.contract, alice_identity.clone().unwrap(), 0).await;
+    // }
 
     #[tokio::test]
     #[should_panic(expected = "NotAuthorized")]

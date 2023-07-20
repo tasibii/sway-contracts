@@ -2,7 +2,7 @@ use crate::utils::{
     abi_calls::{mint, owner_of, balance_of},
     test_helpers::setup,
 };
-use fuels::{prelude::*, signers::Signer, types::{ Address, ContractId, Identity }};
+use fuels::{ signers::Signer, types::{ Address, ContractId, Identity }};
 
 mod success {
 
@@ -103,7 +103,6 @@ mod reverts {
     async fn when_to_is_zero_identity() {
         let (_, bob, _) = setup().await;
         let zero_address = Address::from([0; 32]);
-        let bob_identity = Some(Identity::Address(bob.wallet.address().into()));
 
         let zero_identity_address = Identity::Address(zero_address.into());
         mint(&bob.contract, zero_identity_address.clone()).await;
