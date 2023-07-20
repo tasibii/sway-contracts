@@ -13,7 +13,7 @@ abi NFT {
 
     // Write methods
     #[storage(read, write)]
-    fn mint(to: Identity) -> u64;
+    fn mint(to: Identity);
     #[storage(read, write)]
     fn burn(token_id: u64);
     #[storage(write)]

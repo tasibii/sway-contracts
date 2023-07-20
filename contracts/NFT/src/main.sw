@@ -68,7 +68,7 @@ impl NFT for Contract {
 
     //Write methods
     #[storage(read, write)]
-    fn mint(to: Identity) -> u64 {
+    fn mint(to: Identity) {
         require(!is_zero_identity(to), TokenError::TransferToZeroIdentity);
 
         storage.token_id += 1;
@@ -83,8 +83,6 @@ impl NFT for Contract {
             from: Option::None,
             to: Option::Some(to)
         });
-
-        token_id
     }
     #[storage(read, write)]
     fn burn(token_id: u64) {

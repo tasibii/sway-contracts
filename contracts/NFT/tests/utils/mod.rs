@@ -36,8 +36,8 @@ pub mod abi_calls {
     }
 
     // ============================== W R I T E ============================== //
-    pub async fn mint(contract: &nft, to: Identity) -> u64 {
-        contract.methods().mint(to).call().await.unwrap().value
+    pub async fn mint(contract: &nft, to: Identity) -> FuelCallResponse<()> {
+        contract.methods().mint(to).call().await.unwrap()
     }
     
     pub async fn burn(contract: &nft, token_id: u64) -> FuelCallResponse<()> {
