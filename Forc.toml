@@ -1,6 +1,6 @@
 [project]
 authors = ["tasibii"]
-entry = "./ERC721/src/main.sw"
+entry = "./contracts/NFT/src/main.sw"
 license = "Apache-2.0"
 name = "sway-contracts"
 
