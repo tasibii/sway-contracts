@@ -139,7 +139,6 @@ impl NFT for Contract {
 
         storage.balance_of.insert(from, storage.balance_of.get(from).unwrap() - 1);
         storage.balance_of.insert(to, storage.balance_of.get(to).unwrap_or(0) + 1);
-        storage.balance_of.insert(to, storage.balance_of.get(to).unwrap_or(0) + 1);
         storage.owner_of.insert(token_id, to);
         storage.approvals.remove(token_id);
 
